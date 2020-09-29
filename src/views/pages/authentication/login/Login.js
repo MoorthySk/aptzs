@@ -156,6 +156,7 @@ class Login extends React.Component {
       url: "/admin/login/",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": configData.uiHostUrl,
       },
       data: JSON.stringify(userDtl),
     };
