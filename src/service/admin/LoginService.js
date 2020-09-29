@@ -23,9 +23,9 @@ const request = async (options) => {
 class LoginService {
   loginRequest(logindtl) {
     return request({
-      url: "http://localhost:8080/admin/login/",
+      url: "http://mark1.aptzs.com:8080/admin/login/",
       method: "post",
-      credentials: "include",
+      credentials: "same-origin",
       body: JSON.stringify(logindtl),
     });
   }
@@ -33,7 +33,7 @@ class LoginService {
     console.log("inside logout...");
     localStorage.clear();
     return request({
-      url: "http://localhost:8080/admin/logout-request/",
+      url: "http://mark1.aptzs.com:8080/admin/logout-request/",
       method: "POST",
 
       credentials: "same-origin",

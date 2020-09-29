@@ -10,8 +10,9 @@ import "./@fake-db";
 import axios from "axios";
 import * as configData from "./utility/config";
 const LazyApp = lazy(() => import("./App"));
-axios.defaults.baseURL = configData.hostUrl;
+axios.defaults.baseURL = configData.apiHostUrl;
 axios.defaults.withCredentials = configData.withCredentials;
+
 // configureDatabase()
 ReactDOM.render(
   <Provider store={store}>

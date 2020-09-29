@@ -86,7 +86,7 @@ class RoleCreate extends React.Component {
     var roleId = this.props.match.params.roleId;
 
     axios
-      .post(configData.hostUrl + "/admin/role/searchrole/", {
+      .post("/admin/role/searchrole/", {
         roleId: roleId,
       })
 
@@ -106,7 +106,7 @@ class RoleCreate extends React.Component {
       });
     this.removeAll();
     axios
-      .post(configData.hostUrl + "/admin/role/rback-listmaping/", {
+      .post("/admin/role/rback-listmaping/", {
         roleId: roleId,
       })
 
@@ -226,7 +226,7 @@ class RoleCreate extends React.Component {
             console.log("token " + localStorage.getItem("accessToken"));
             axios({
               method: "POST",
-              url: configData.hostUrl + "/admin/role/update/",
+              url: "/admin/role/update/",
               withCredentials: true,
               data: payload,
             })

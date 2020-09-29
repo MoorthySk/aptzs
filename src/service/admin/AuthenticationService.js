@@ -27,7 +27,7 @@ class AuthenticationService {
     searchParams.append("password", logindtl.password);
     localStorage.clear();
     return request({
-      url: "http://localhost:8080/oauth/token",
+      url: "http://mark1.aptzs.com:8080/oauth/token",
       method: "POST",
       credentials: "same-origin",
       beforeSend: function (xhr) {

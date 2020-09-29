@@ -54,7 +54,7 @@ class UserCreate extends React.Component {
     this.handleShow();
     await axios({
       method: "POST",
-      url: configData.hostUrl + "/admin/role/all-roles/",
+      url: "/admin/role/all-roles/",
     }).then((response) => {
       try {
         this.setState({

@@ -6,6 +6,7 @@ import LoginService from "../../../../service/admin/LoginService";
 import { Mail, Lock } from "react-feather";
 import { Formik } from "formik";
 import loginImg from "../../../../assets/img/pages/login.png";
+
 import {
   Card,
   CardBody,
@@ -45,7 +46,7 @@ class Login extends React.Component {
         grant_type: "password",
       });
       // this.state.statusList = await LovList.lovList(appConst.statusList);
-      AuthenticationService.createRequest(loginRequest)
+      this.createRequest(loginRequest)
         .then((response) => {
           if (response.status == 400) {
             this.loginRqst.loginId = loginRequest.username;
@@ -65,7 +66,7 @@ class Login extends React.Component {
             const userDtl = Object.assign({}, this.loginRqst);
             let responseCode = "";
             let responseMsg = "";
-            LoginService.loginRequest(userDtl)
+            this.loginRequest(userDtl)
               .then((response) => {
                 console.log("loginRequest" + response.userName);
                 localStorage.setItem("userName", response.userName);
@@ -111,14 +112,18 @@ class Login extends React.Component {
     });
     const headers = new Headers({
       "Content-Type": "application/x-www-form-urlencoded",
-      "Access-Control-Allow-Origin": "http://localhost:4000",
+      "Access-Control-Allow-Origin": configData.uiHostUrl,
     });
     headers.append("Authorization", "Basic Z3JlZW5sZWFmOmFzdHJvbmV0");
     localStorage.clear();
     var config = {
       method: "post",
-      url: "/oauth/token/",
-      headers: headers,
+      url: "/oauth/token",
+      headers: {
+        Authorization: "Basic Z3JlZW5sZWFmOmFzdHJvbmV0",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": configData.uiHostUrl,
+      },
       data: data,
     };
     let response = {};
@@ -149,7 +154,10 @@ class Login extends React.Component {
     var config = {
       method: "post",
       url: "/admin/login/",
-      data: data,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: JSON.stringify(userDtl),
     };
     let response = {};
     await axios(config)

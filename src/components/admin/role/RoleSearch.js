@@ -101,7 +101,7 @@ class RoleSearch extends React.Component {
   async componentDidMount() {
     await axios({
       method: "POST",
-      url: configData.hostUrl + "/admin/role/all-roles/",
+      url: "/admin/role/all-roles/",
     }).then((response) => {
       try {
         this.setState({ rowData: response.data.roles });
