@@ -1,0 +1,28 @@
+// ===============================================================================================
+//  File Name: colors.scss
+//  Description: Colors Page Content SCSS
+//  ----------------------------------------------------------------------------------------------
+//  Item Name: Planet Info React Admin Template
+//  Version: 1.0
+//  Author: Planet Info
+//  Author URL: http://www.Planetinfo.com
+// ================================================================================================
+
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/mixins";
+@import "../bootstrap-extended/mixins";
+
+// Core variables and mixins overrides
+@import "../core/variables/variables";
+@import "~bootstrap/scss/_variables.scss";
+
+@import "../core/variables/components-variables";
+
+.colors-list {
+  li {
+    padding: 0.4rem;
+    svg {
+      margin-right: 0.25rem;
+    }
+  }
+}

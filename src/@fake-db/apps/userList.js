@@ -1,0 +1,66 @@
+import mock from "../mock";
+const users = [
+  {
+    issueType: "1",
+    contactPersonName: "sk moorthy",
+    issueDesc: "Issueeeeeeee",
+    ontactPersonNumber: "9840642421",
+    created_date: null,
+    priority: "1",
+    maintId: 1000,
+    contactPersonEmail: "sk@gmail.com",
+  },
+  {
+    issueType: "1",
+    contactPersonName: "Sk",
+    issueDesc: "Power Issue",
+    ontactPersonNumber: "9840642421",
+    created_date: null,
+    priority: "1",
+    maintId: 1001,
+    contactPersonEmail: "sk@gmail.com",
+  },
+  {
+    issueType: "1",
+    contactPersonName: "Sk",
+    issueDesc: "Power Issue",
+    ontactPersonNumber: "9840642421",
+    created_date: null,
+    priority: "1",
+    maintId: 1002,
+    contactPersonEmail: "sk@gmail.com",
+  },
+  {
+    issueType: "1",
+    contactPersonName: "sk moorthy",
+    issueDesc: "Issueeeeeeee",
+    ontactPersonNumber: "9840642421",
+    created_date: null,
+    priority: "1",
+    maintId: 1003,
+    contactPersonEmail: "sk@gmail.com",
+  },
+  {
+    issueType: "1",
+    contactPersonName: "sk moorthy",
+    issueDesc: "Issueeeeeeee",
+    ontactPersonNumber: "9840642421",
+    created_date: null,
+    priority: "1",
+    maintId: 1004,
+    contactPersonEmail: "sk@gmail.com",
+  },
+  {
+    issueType: "1",
+    contactPersonName: "sk moorthy",
+    issueDesc: "Issueeeeeeee",
+    ontactPersonNumber: "9840642421",
+    created_date: null,
+    priority: "1",
+    maintId: 1006,
+    contactPersonEmail: "sk@gmail.com",
+  },
+];
+
+// GET DATA
+mock.onGet("/api/users/list").reply(200, users);
